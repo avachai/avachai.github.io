@@ -1,3 +1,3 @@
-# avachai.github.io
+# AvaChai
 
 Create Your Avatar at avachai.github.io
