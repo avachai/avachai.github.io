@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AvaChai - Help</title>
+<link rel="icon" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+input {
+ caret-color: brown;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+}
+</style>
+</head>
+<body style="background-color: black">
+
+<img src="favicon2.png">
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for help..." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="help-1">How do I create a logo with AvaChai?</a></li>
+  <li><a href="help-2">Can I compress AvaChai avatars?</a></li>
+  <li><a href="/news">What is AvaChai?</a></li>
+  <li><a href="#">Is AvaChai free?</a></li>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
